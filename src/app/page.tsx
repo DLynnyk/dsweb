@@ -1,10 +1,11 @@
 'use client'
 import { ArrowRight, Briefcase, ChevronDown, Compass, Feather, Globe, Mail, Menu, Monitor, Moon, Phone, Sun, User, X } from 'lucide-react';
 import { useEffect, useState } from 'react';
+import Image from 'next/image';
 
 const TRDDesignStudio = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const [darkMode, setDarkMode] = useState(false);
+  const [darkMode, setDarkMode] = useState(true);
   const [activeSection, setActiveSection] = useState('home');
   const [isLoaded, setIsLoaded] = useState(false);
 
@@ -141,8 +142,13 @@ const TRDDesignStudio = () => {
         <div className="container mx-auto px-6 py-4">
           <div className="flex items-center justify-between">
             <a href="#home" className="text-2xl font-bold tracking-tight group">
-              <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-500 to-pink-500">TRD</span>
-              <span className="ml-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">Design Studio</span>
+              <Image
+                src="/logo.svg"
+                alt="Resume analysis sample"
+                width={136}
+                height={40}
+              />
+
             </a>
 
             {/* Desktop Navigation */}
@@ -156,13 +162,7 @@ const TRDDesignStudio = () => {
                   {item}
                 </a>
               ))}
-              <button
-                onClick={toggleDarkMode}
-                className="p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors duration-300"
-                aria-label="Toggle dark mode"
-              >
-                {darkMode ? <Sun className="w-5 h-5" /> : <Moon className="w-5 h-5" />}
-              </button>
+
               <a
                 href="#contact"
                 className="px-6 py-2 bg-gradient-to-r from-blue-500 to-pink-500 text-white rounded-full hover:shadow-lg transition-all duration-300 transform hover:scale-105"
@@ -173,13 +173,7 @@ const TRDDesignStudio = () => {
 
             {/* Mobile Menu Button */}
             <div className="flex items-center md:hidden">
-              <button
-                onClick={toggleDarkMode}
-                className="p-2 mr-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors duration-300"
-                aria-label="Toggle dark mode"
-              >
-                {darkMode ? <Sun className="w-5 h-5" /> : <Moon className="w-5 h-5" />}
-              </button>
+
               <button
                 onClick={() => setIsOpen(!isOpen)}
                 className="p-2 rounded-md hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors duration-300"
@@ -227,7 +221,7 @@ const TRDDesignStudio = () => {
                   We design <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-500 to-pink-500">digital experiences</span> that drive business growth
                 </h1>
                 <p className="text-lg text-gray-600 dark:text-gray-400 mb-8 max-w-lg">
-                  TRD is a design studio focused on creating user-centric digital solutions that combine aesthetics with functionality to deliver measurable results.
+                  UlineX is a design studio focused on creating user-centric digital solutions that combine aesthetics with functionality to deliver measurable results. The New Line in Design
                 </p>
                 <div className="flex flex-wrap gap-4">
                   <a
@@ -248,15 +242,13 @@ const TRDDesignStudio = () => {
                 <div className="absolute -top-16 -right-16 w-64 h-64 bg-blue-500/20 rounded-full filter blur-3xl animate-blob"></div>
                 <div className="absolute -bottom-16 -left-16 w-64 h-64 bg-pink-500/20 rounded-full filter blur-3xl animate-blob animation-delay-2000"></div>
                 <div className="relative z-10 rounded-xl overflow-hidden shadow-2xl transform rotate-1 hover:rotate-0 transition-transform duration-500">
-                  <div className="aspect-video bg-gray-100 dark:bg-gray-800 flex items-center justify-center">
-                    <div className="p-8 text-center">
-                      <Monitor className="w-16 h-16 mx-auto mb-4 text-blue-500" />
-                      <p className="text-lg font-medium">Interactive Demo</p>
-                      <p className="text-sm text-gray-500 dark:text-gray-400 mt-2">
-                        Animation/WebGL/Interactive element would be here
-                      </p>
-                    </div>
-                  </div>
+                  <Image
+                    src="/demo-image.jpg"
+                    alt="UlineX Demo"
+                    width={800}
+                    height={450}
+                    className="w-full h-auto object-cover aspect-video"
+                  />
                 </div>
               </div>
             </div>
@@ -267,7 +259,7 @@ const TRDDesignStudio = () => {
         <section id="about" className="py-20 bg-gray-50 dark:bg-gray-800/30">
           <div className="container mx-auto px-6">
             <div className="text-center mb-16 animate-fade-in-up">
-              <h2 className="text-3xl md:text-4xl font-bold mb-4">About TRD Studio</h2>
+              <h2 className="text-3xl md:text-4xl font-bold mb-4">About UlineX</h2>
               <p className="text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
                 We create strategic design solutions that transform ideas into impactful digital experiences
               </p>
@@ -714,7 +706,7 @@ const TRDDesignStudio = () => {
           <div className="grid md:grid-cols-4 gap-8 mb-8">
             <div>
               <a href="#home" className="text-2xl font-bold tracking-tight mb-4 inline-block">
-                <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-pink-400">TRD</span>
+                <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-pink-400">UlineX</span>
                 <span className="ml-2 text-gray-300">Design Studio</span>
               </a>
               <p className="text-gray-400 mb-6">
@@ -784,7 +776,7 @@ const TRDDesignStudio = () => {
 
           <div className="pt-8 border-t border-gray-800 flex flex-col md:flex-row justify-between items-center gap-4">
             <p className="text-gray-500">
-              &copy; {new Date().getFullYear()} TRD Design Studio. All rights reserved.
+              &copy; {new Date().getFullYear()} UlineX Design Studio. All rights reserved.
             </p>
             <div className="flex gap-6">
               <a href="#" className="text-gray-500 hover:text-white transition-colors duration-300">
